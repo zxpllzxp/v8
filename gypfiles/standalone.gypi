@@ -441,9 +441,9 @@
       'clang_warning_flags': [
         '-Wsign-compare',
         # TODO(thakis): https://crbug.com/604888
-        '-Wno-undefined-var-template',
+        #'-Wno-undefined-var-template',
         # TODO(yangguo): issue 5258
-        '-Wno-nonportable-include-path',
+        #'-Wno-nonportable-include-path',
       ],
       'conditions':[
         ['OS=="android"', {
@@ -756,7 +756,7 @@
       'target_defaults': {
         'cflags': [
           '-Wall',
-          '<(werror)',
+          #'<(werror)',
           '-Wno-unused-parameter',
           '-pthread',
           '-pedantic',
@@ -860,6 +860,9 @@
           #                    declared.
           # This happens in a number of Windows headers. Dumb.
           4091,
+          4251,
+          4819,
+          4267,
 
           # C4127: conditional expression is constant
           # This warning can in theory catch dead code and other problems, but
